@@ -34,17 +34,26 @@ int main()
 	while(1)
 	{
 
-		for(i=3;i>=0;i--)
-		{
-			LED_voidOn(arr[i]);
-			LED_voidOn(arr[7-i]);
-			_delay_ms(1000);
-			LED_voidOff(arr[i]);
-			LED_voidOff(arr[7-i]);
+		int j =0;
 
-		}
+				for(i=7;i>=4;i--)
+				{
+					LED_voidOn(arr[i]);
+					LED_voidOn(arr[j]);
+					_delay_ms(2000);
 
+					if((i==4)&&(j==3))
+					{
+						for(int i=7;i>=0;i--)
+						{
+							LED_voidOff(arr[i]);
 
+						}
+						i=7;
+						j=-1;
 
+					}
+					j++;
+				}
 	}
 }
